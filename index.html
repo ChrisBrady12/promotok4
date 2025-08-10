@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nueva página</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<center><img id="img1" src="izzi.png" alt="logo izzi"></center><br>
+<center><h1>LA AMABILIDAD  Y EMPATIA</h1></center>
+<center><h2>POR FAVOR OBSERVA EL VIDEO Y POSTERIORMENTE INGRESA AL PROMOTOK 4</h2></center><br>
+<div class="video-preview">
+
+<!-- Imagen y botón ocultos desde el inicio -->
+<img src="p4.png" alt="Vista previa del video" id="previewImg" style="display:none;">
+<center><button class="play-button" style="display:none;">
+<svg viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+</svg>    
+</button></center>
+
+<!-- Video que se reproduce automáticamente -->
+<video id="video" src="promo4.mp4" controls autoplay muted playsinline style="display:block;"></video>
+
+<script>
+  // Evita el menú contextual en imágenes
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+  });
+
+  // Evita el menú contextual en el video
+  document.querySelector('video').addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // Asegura la reproducción automática al cargar la página
+  const video = document.getElementById('video');
+  window.addEventListener('load', () => {
+    video.play().catch(() => {
+      video.muted = false;
+      video.play();
+    });
+  });
+</script>
+</div>
+<br><br><br>
+<center><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=4kLKykqtGU2CTD_zcJvYQKx4VpjfIkdApiPbcsWmq4pUQk9BVjRGSkxBUlRVWFpPMU1XQUNUSllMMi4u">PROMOTOK 4</a></center><br>
+<center><img id="img2" src="manos.png" alt="imagen"></center><br>
+</div>
+</body>
+</html>
